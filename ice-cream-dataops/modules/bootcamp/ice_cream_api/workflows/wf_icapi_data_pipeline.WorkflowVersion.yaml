@@ -9,8 +9,8 @@ workflowDefinition:
       function:
         externalId: icapi_datapoints_extractor
         data: { "hours": 1 }
-    name:'Task Three'
-    description:'3rd Task'        
+    name: 'Task Three'
+    description: '3rd Task'        
     retries: 3
     timeout: 3600
     onFailure: abortWorkflow
@@ -22,32 +22,32 @@ workflowDefinition:
       transformation:
         externalId: create_asset_hierarchy
         concurrencyPolicy: fail
-    name:'Task One'
-    description:'First task'
+    name: 'Task One'
+    description: 'First task'
     retries: 3
     timeout: 3600
     onFailure: abortWorkflow
- - externalId: contextualize_ts_assets_task
+  - externalId: contextualize_ts_assets_task
     type: transformation
     parameters:
       transformation:
         externalId: contextualize_ts_assets
         concurrencyPolicy: fail
-    name:'Task Two'
-    description:'Second task'
+    name: 'Task Two'
+    description: 'Second task'
     retries: 3
     timeout: 3600
     onFailure: abortWorkflow
     dependsOn:
-      -externalID:   create_asset_hierarchy_task
-- externalId: oee_timeseries_task
+      - externalID:   create_asset_hierarchy_task
+  - externalId: oee_timeseries_task
     type: function
     parameters:
       function:
         externalId: oee_timeseries
         data: {}
-    name:'Task Four'
-    description:'4th Task'        
+    name: 'Task Four'
+    description: '4th Task'        
     retries: 3
     timeout: 3600
     onFailure: abortWorkflow
