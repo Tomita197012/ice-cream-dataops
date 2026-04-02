@@ -39,7 +39,7 @@ workflowDefinition:
     timeout: 3600
     onFailure: abortWorkflow
     dependsOn:
-      - externalID:   create_asset_hierarchy_task
+      - externalId: create_asset_hierarchy_task
   - externalId: oee_timeseries_task
     type: function
     parameters:
